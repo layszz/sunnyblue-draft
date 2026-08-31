@@ -1,0 +1,512 @@
+/* SunnyBlue draft brochure — navy + gold, cream paper. */
+:root {
+  --navy: #123a6f;
+  --navy-deep: #0c2a52;
+  --sky: #2e6fbf;
+  --gold: #c9a227;
+  --gold-soft: #e8c547;
+  --cream: #f6f1e4;
+  --cream-dark: #ebe4d2;
+  --paper: #fffdf8;
+  --ink: #1c2430;
+  --muted: #5a6573;
+  --rule: #d9d0b8;
+  --max: 68rem;
+  --font-display: "Fraunces", "Palatino Linotype", Palatino, serif;
+  --font-body: "Source Sans 3", "Segoe UI", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--cream);
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--sky);
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  color: var(--navy);
+}
+
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.skip {
+  position: absolute;
+  left: 0.75rem;
+  top: -3rem;
+  z-index: 20;
+  padding: 0.4rem 0.8rem;
+  background: var(--gold);
+  color: var(--navy-deep);
+  font-weight: 600;
+}
+
+.skip:focus {
+  top: 0.75rem;
+}
+
+/* Draft so Melanie does not think this is live */
+.draft-banner {
+  margin: 0;
+  padding: 0.55rem 1rem;
+  background: var(--gold);
+  color: var(--navy-deep);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
+.wrap {
+  width: min(100% - 2rem, var(--max));
+  margin-inline: auto;
+}
+
+.site-header {
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+}
+
+.header-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+  padding: 0.9rem 0;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--navy);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.brand:hover {
+  color: var(--navy-deep);
+}
+
+.mark {
+  width: 2.15rem;
+  height: 2.15rem;
+  flex-shrink: 0;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.15rem;
+}
+
+.nav a {
+  color: var(--navy);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.2rem 0;
+  border-bottom: 2px solid transparent;
+}
+
+.nav a:hover,
+.nav a[aria-current="page"] {
+  border-bottom-color: var(--gold);
+  color: var(--navy-deep);
+}
+
+.hero {
+  color: #fff;
+  background:
+    radial-gradient(ellipse 70% 80% at 100% -10%, rgba(232, 197, 71, 0.28), transparent 55%),
+    linear-gradient(165deg, var(--navy-deep) 0%, var(--navy) 52%, #154a82 100%);
+  padding: 3.25rem 0 3.5rem;
+}
+
+.hero-inner {
+  display: grid;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+@media (min-width: 860px) {
+  .hero-inner {
+    grid-template-columns: 1fr 11rem;
+  }
+}
+
+.hero-sun {
+  display: none;
+  justify-self: end;
+  width: 10.5rem;
+  height: 10.5rem;
+  opacity: 0.92;
+}
+
+@media (min-width: 860px) {
+  .hero-sun {
+    display: block;
+  }
+}
+
+.hero .kicker {
+  margin: 0 0 0.65rem;
+  color: var(--gold-soft);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 0 0 0.7rem;
+  font-family: var(--font-display);
+  font-size: clamp(2.15rem, 5vw, 3.4rem);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.hero .tagline {
+  margin: 0 0 1.25rem;
+  max-width: 36rem;
+  color: #f3ead0;
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.4vw, 1.55rem);
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.35;
+}
+
+.gold-rule {
+  width: 4rem;
+  height: 3px;
+  margin: 0 0 1.35rem;
+  background: var(--gold);
+  border: 0;
+}
+
+.hero p {
+  margin: 0 0 1.5rem;
+  max-width: 40rem;
+  color: #e8eef6;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.65rem 1.15rem;
+  border-radius: 2px;
+  font-weight: 650;
+  text-decoration: none;
+  line-height: 1.2;
+}
+
+.btn-gold {
+  background: var(--gold);
+  color: var(--navy-deep);
+}
+
+.btn-gold:hover {
+  background: var(--gold-soft);
+  color: var(--navy-deep);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: #fff;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.7);
+}
+
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.chapter-band {
+  background: var(--navy);
+  color: #dce7f5;
+  font-size: 0.98rem;
+}
+
+.chapter-band .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35rem 0.5rem;
+  padding: 0.7rem 0;
+  text-align: center;
+}
+
+.chapter-band a {
+  color: var(--gold-soft);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.chapter-band a:hover {
+  text-decoration: underline;
+}
+
+.chapter-band span[aria-hidden="true"] {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+main {
+  padding: 2.75rem 0 3.5rem;
+}
+
+.page-hero {
+  padding-bottom: 0.5rem;
+}
+
+.page-hero h1 {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 2.7rem);
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.15;
+}
+
+.lede {
+  margin: 0;
+  max-width: 40rem;
+  color: var(--muted);
+  font-size: 1.2rem;
+}
+
+section {
+  margin-top: 2.5rem;
+}
+
+h2 {
+  margin: 0 0 0.85rem;
+  font-family: var(--font-display);
+  font-size: 1.65rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+h3 {
+  margin: 0 0 0.4rem;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.section-kicker {
+  margin: 0 0 0.25rem;
+  color: var(--gold);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.stack-gap {
+  margin-top: 1rem;
+}
+
+.grid-2,
+.grid-3 {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 700px) {
+  .grid-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.card {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-top: 3px solid var(--gold);
+  padding: 1.15rem 1.2rem 1.25rem;
+}
+
+.card p:last-child,
+.card ul:last-child {
+  margin-bottom: 0;
+}
+
+.card .when {
+  margin: 0 0 0.45rem;
+  color: var(--sky);
+  font-weight: 650;
+  font-size: 0.95rem;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.note {
+  margin-top: 1rem;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.split {
+  display: grid;
+  gap: 1.25rem;
+}
+
+@media (min-width: 800px) {
+  .split {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+.people-block {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  padding: 1.15rem 1.25rem;
+}
+
+.people-block ul {
+  margin: 0.4rem 0 0;
+  padding-left: 1.15rem;
+}
+
+.people-block li + li {
+  margin-top: 0.2rem;
+}
+
+.ig-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ig-list li {
+  margin: 0 0 0.65rem;
+}
+
+.ig-list a {
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.ig-list a:hover {
+  text-decoration: underline;
+}
+
+.contact-email {
+  font-size: 1.35rem;
+  font-weight: 650;
+}
+
+.donate {
+  background: var(--cream-dark);
+  border: 1px dashed var(--gold);
+  padding: 1.1rem 1.2rem;
+}
+
+.donate h2 {
+  font-size: 1.25rem;
+}
+
+.site-footer {
+  background: var(--navy-deep);
+  color: #c5d3e6;
+  padding: 1.75rem 0 2rem;
+  font-size: 0.98rem;
+}
+
+.site-footer a {
+  color: var(--gold-soft);
+}
+
+.site-footer .brand-line {
+  margin: 0 0 0.35rem;
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.site-footer p {
+  margin: 0.25rem 0;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  margin: 0.85rem 0 0.9rem;
+}
+
+.footer-links a {
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.legal {
+  margin-top: 0.85rem;
+  color: #8ea0b8;
+  font-size: 0.88rem;
+}
+
+@media (max-width: 520px) {
+  body {
+    font-size: 1.05rem;
+  }
+
+  .hero {
+    padding: 2.25rem 0 2.5rem;
+  }
+
+  .nav {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
