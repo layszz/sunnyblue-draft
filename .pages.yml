@@ -1,0 +1,46 @@
+media:
+  input: news/img
+  output: news/img
+  rename: random
+  categories: [image]
+content:
+  - name: news
+    label: News posts
+    type: collection
+    path: _posts
+    filename: "{fields.date}-{fields.title}.md"
+    view:
+      fields: [title, date]
+      primary: title
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: photos
+        label: Photos
+        type: image
+        options:
+          multiple: true
+          rename: random
+      - name: published
+        label: "Show on the website (untick to keep as a hidden draft)"
+        type: boolean
+        default: true
+      - name: body
+        label: Post text
+        type: rich-text
+      - name: layout
+        type: string
+        hidden: true
+        default: news-post

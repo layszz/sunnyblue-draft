@@ -1,0 +1,7 @@
+title: SunnyBlue
+timezone: America/Los_Angeles
+future: true            # so a post dated "today" in LA never hides due to build-server clock
+permalink: /news/:year-:month-:day-:title:output_ext
+exclude:
+  - README.md
+  - .pages.yml

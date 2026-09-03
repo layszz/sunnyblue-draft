@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
   <meta name="theme-color" content="#123a6f">
-  <title>Page not found — SunnyBlue</title>
+  <title>News — SunnyBlue</title>
+  <meta name="description" content="News and updates from SunnyBlue chapters in Cerritos, Cypress, and Upland.">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,18 +40,30 @@
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="chapters.html">Chapters</a>
-        <a href="news.html">News</a>
+        <a href="news.html" aria-current="page">News</a>
         <a href="gallery.html">Gallery</a>
         <a href="contact.html">Contact</a>
       </nav>
     </div>
   </header>
+
   <main id="main">
-    <div class="wrap page-hero">
-      <h1>That page is not here</h1>
-      <p><a href="index.html">Back to SunnyBlue home</a></p>
+    <div class="wrap">
+      <p class="section-kicker">Stay updated</p>
+      <h2>News</h2>
+      {% if site.posts.size == 0 %}
+        <p>No news yet — check back soon, or follow <a href="https://www.instagram.com/sunnyblueca/">@sunnyblueca</a>.</p>
+      {% endif %}
+      {% for post in site.posts %}
+        <article class="card">
+          <p class="when">{{ post.date | date: "%-d %B %Y" }}</p>
+          <h3><a href="{{ post.url | remove: site.baseurl | remove_first: '/' }}">{{ post.title }}</a></h3>
+          {{ post.excerpt }}
+        </article>
+      {% endfor %}
     </div>
   </main>
+
   <footer class="site-footer">
     <div class="wrap">
       <p class="brand-line">SunnyBlue · Cerritos, California</p>
