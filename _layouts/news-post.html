@@ -49,7 +49,7 @@
       <article>
         <p class="section-kicker">News</p>
         <h1>{{ page.title }}</h1>
-        <p class="when">{{ page.date | date: "%-d %B %Y" }}</p>
+        <p class="when">{{ page.date | date: "%B %-d, %Y" }}</p>
         {{ content }}
         {% if page.photos and page.photos.size > 0 %}
           <div class="grid-2">

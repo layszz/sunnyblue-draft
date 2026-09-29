@@ -312,6 +312,15 @@ main {
   font-size: 1.2rem;
 }
 
+/* About page hero: title fits on one line, intro spans the full width */
+.page-hero--tight h1 {
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+}
+
+.page-hero--tight .lede {
+  max-width: none;
+}
+
 section {
   margin-top: 2.5rem;
 }

@@ -56,7 +56,7 @@
       {% endif %}
       {% for post in site.posts %}
         <article class="card">
-          <p class="when">{{ post.date | date: "%-d %B %Y" }}</p>
+          <p class="when">{{ post.date | date: "%B %-d, %Y" }}</p>
           <h3><a href="{{ post.url | remove: site.baseurl | remove_first: '/' }}">{{ post.title }}</a></h3>
           {{ post.excerpt }}
         </article>
