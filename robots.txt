@@ -1,3 +1,2 @@
-# Draft preview — do not index until Melanie okays a public site.
 User-agent: *
-Disallow: /
+Disallow:

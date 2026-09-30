@@ -71,18 +71,6 @@ button:focus-visible,
   top: 0.75rem;
 }
 
-/* Draft so Melanie does not think this is live */
-.draft-banner {
-  margin: 0;
-  padding: 0.55rem 1rem;
-  background: var(--gold);
-  color: var(--navy-deep);
-  font-size: 0.9rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  text-align: center;
-}
-
 .wrap {
   width: min(100% - 2rem, var(--max));
   margin-inline: auto;
